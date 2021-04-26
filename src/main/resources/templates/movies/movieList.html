@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<thead>
+<tr>
+    <h1><th>영화<br></th></h1>
+</tr>
+</thead>
+<tbody>
+<tr th:each="movie : ${movielist}">
+    <a th:href="${movie.link}"><img th:src="${#strings.equals(movie.image,'') ? 'preparing_photo.jpg': movie.image}"><br></a>
+    <td th:text="${movie.title}"></td>
+    <br>
+</tr>
+</tbody>
+</body>
+</html>

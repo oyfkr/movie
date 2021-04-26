@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- jquery -->
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>탐색하세요</h1>
+<form role="form" action="exploreList" th:object="${genre}" method="post">
+    <select th:field="${exploreform}">
+        <option th:value="'s'" selected>선택</option>
+        <option th:each="val : ${exploreform}"
+            th:value="${val}"
+            th:text="${val}">
+        </option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
